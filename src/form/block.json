@@ -1,0 +1,16 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "wpuserfeedback/form",
+	"version": "1.0.0",
+	"title": "WPUserFeedback Form",
+	"category": "design",
+	"icon": "smiley",
+	"description": "wpuserfeedback/form-block Block tool.",
+	"supports": {
+		"html": false
+	},
+	"textdomain": "wpuserfeedback",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./editor.css"
+}

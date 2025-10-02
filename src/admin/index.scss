@@ -1,0 +1,37 @@
+.wpuf-admin .wpuf-card {
+    background: #fff;
+    padding: 16px;
+    border: 1px solid #dcdcde;
+    border-radius: 4px;
+    margin-top: 16px;
+}
+
+.wpuf-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.wpuf-table th,
+.wpuf-table td {
+    padding: 8px;
+    border-bottom: 1px solid #eee;
+    vertical-align: top;
+}
+
+.wpuf-toolbar {
+    margin: 12px 0;
+}
+
+.ellipsis {
+    max-width: 32rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.wpuf-pagination {
+    margin-top: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}

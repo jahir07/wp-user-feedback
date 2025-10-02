@@ -1,0 +1,39 @@
+{
+  "name": "wpuserfeedback/wp-user-feedback",
+  "description": "wpuserfeedback plugin.",
+  "type": "wordpress-plugin",
+  "license": "GPLv2",
+  "authors": [
+    {
+      "name": "wpuserfeedback",
+      "email": "mamun3d@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.4"
+  },
+  "autoload": {
+    "classmap": [
+      "includes/"
+    ]
+  },
+  "archive": {
+    "exclude": [
+      "/tests",
+      "/.phpunit.result.cache",
+      "/phpunit.xml",
+      "/phpunit.xml.dist",
+      "/phpcs.xml",
+      "/.github",
+      "/.git",
+      "/.gitignore",
+      "/composer.*",
+      "/package.json",
+      "/node_modules",
+      "/src",
+      "/build",
+      "/vendor",
+      "/vendor/bin"
+    ]
+  }
+}

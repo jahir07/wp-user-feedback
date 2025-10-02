@@ -1,0 +1,34 @@
+{
+  "name": "wpuserfeedback",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "clean": "rm -rf assets/blocks/* assets/admin/*",
+    "build": "wp-scripts build --output-path=assets/blocks",
+    "build:admin": "wp-scripts build ./src/admin/index.js --output-path=assets/admin && rm -rf assets/admin/form assets/admin/result",
+    "start:blocks": "wp-scripts start --output-path=assets/blocks && rm -rf assets/admin/form assets/admin/result",
+    "start:admin": "wp-scripts start ./src/admin/index.js --output-path=assets/admin && rm -rf assets/admin/form assets/admin/result",
+    "start": "pnpm run start:blocks & pnpm run start:admin",
+    "check-engines": "wp-scripts check-engines",
+    "check-licenses": "wp-scripts check-licenses",
+    "format": "wp-scripts format",
+    "lint:js": "wp-scripts lint-js 'src/**/*.{js,jsx,ts,tsx}'",
+    "lint:scss": "wp-scripts lint-style 'src/sass/**/*.scss'",
+    "watch:css": "sass src/sass:assets/css --source-map --style=expanded --quiet-deps --no-error-css -w",
+    "build:css": "sass src/sass:assets/css --style=compressed --quiet-deps --no-error-css"
+  },
+  "devDependencies": {
+    "@wordpress/scripts": "^24.4.0",
+    "sass": "^1.93.2",
+    "stylelint": "^16.24.0",
+    "stylelint-config-wordpress": "^17.0.0",
+    "vue": "^3.5.22"
+  },
+  "browserslist": [
+    "extends @wordpress/browserslist-config"
+  ],
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  }
+}
