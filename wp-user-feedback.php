@@ -10,35 +10,54 @@
  * Domain Path:  /languages
  * License:      GPLv2+
  * License URI:  LICENSE
+ *
+ * @package WP User Feedback
  */
 
-
-// don't call the file directly
+// don't call the file directly.
 defined( 'ABSPATH' ) || die( 'No direct access!' );
 
-define('WPUF_VERSION', '1.0.0');
-define('WPUF_FILE', __FILE__);
-define('WPUF_PATH', dirname(WPUF_FILE));
-define('WPUF_URL', plugins_url('', WPUF_FILE));
-define('WPUF_ASSETS', WPUF_URL . '/assets');
+define( 'WPUF_VERSION', '1.0.0' );
+define( 'WPUF_FILE', __FILE__ );
+define( 'WPUF_PATH', dirname( WPUF_FILE ) );
+define( 'WPUF_URL', plugins_url( '', WPUF_FILE ) );
+define( 'WPUF_ASSETS', WPUF_URL . '/assets' );
 
 require_once __DIR__ . '/vendor/autoload.php';
 
 use WPUserFeedback\Plugin;
+use WPUserFeedback\Installer;
 
+/**
+ * Run installer on activation.
+ */
+register_activation_hook(
+	__FILE__,
+	function () {
+		$installer = new Installer();
+		$installer->do_install();
+	}
+);
+
+// Deactivation hook (future use).
+register_deactivation_hook(
+	__FILE__,
+	function () {
+		// Placeholder for deactivation tasks.
+	}
+);
 
 if ( ! function_exists( 'wpuserfeedback' ) ) {
-    /**
-     * Returns instanse of the plugin class.
-     *
-     * @since  1.0
-     * @return object
-     */
-    function wpuserfeedback()
-    {
-        return Plugin::instance();
-    }
+	/**
+	 * Returns instanse of the plugin class.
+	 *
+	 * @since  1.0
+	 * @return object
+	 */
+	function wpuserfeedback() {
+		return Plugin::instance();
+	}
 }
 
-//lets play.
+// lets play.
 wpuserfeedback();

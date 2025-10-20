@@ -60,13 +60,8 @@ final class Plugin {
 	 *
 	 * Sets up all appropriate hooks and actions
 	 * within this plugin.
-	 *
-	 * @uses register_activation_hook()
-	 * @uses register_deactivation_hook()
 	 */
 	private function __construct() {
-		register_activation_hook( __FILE__, array( $this, 'activate' ) );
-		register_deactivation_hook( __FILE__, array( $this, 'deactivate' ) );
 	}
 
 	/**
@@ -99,9 +94,6 @@ final class Plugin {
 
 			wp_die( wp_kses_post( '<p>' . $message . '</p>' . $link ) );
 		}
-
-		$installer = new Installer();
-		$installer->do_install();
 	}
 
 	/**
